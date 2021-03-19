@@ -24,7 +24,7 @@ else
     @using (Html.BeginForm("DeleteEngineer", "Machines"))
     {
       @Html.Hidden("joinId", @element.EngineerMachineId)
-      <button class="btn btn-danger" type="submit">Delete</button>
+      <button class="btn btn-danger btn-sm" type="submit">Delete</button>
     }
   }
   </ul>
