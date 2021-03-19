@@ -51,7 +51,7 @@ namespace Factory.Controllers
     }
     public ActionResult Delete(int id)
     {
-      Machine model = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      Engineer model = _db.Engineers.FirstOrDefault(engie => engie.EngineerId == id);
       return View(model);
     }
   }
