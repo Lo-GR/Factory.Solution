@@ -42,5 +42,12 @@ namespace Factory.Controllers
       Engineer model = _db.Engineers.FirstOrDefault(engie=> engie.EngineerId == id);
       return View(model);
     }
+    [HttpPost]
+    public ActionResult Edit(Engineer engineer)
+    {
+      _db.Entry(engineer).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
