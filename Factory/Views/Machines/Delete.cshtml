@@ -1,0 +1,14 @@
+@{
+  Layout ="_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h2>Are you sure you want to delete @Html.DisplayFor(model => model.MachineName)</h2>
+
+@using (Html.BeginForm())
+{
+  <button type="submit" class="btn btn-danger"> Yes, I want to remove machine</button>
+}
+
+<button class="btn btn-dark">@Html.ActionLink("Back to Machine List", "Index")</button>
