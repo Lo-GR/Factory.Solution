@@ -63,5 +63,13 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    [HttpPost]
+    public ActionResult DeleteEngineer(int joinId)
+    {
+      EngineerMachine entry = _db.EngineerMachine.FirstOrDefault(join => join.EngineerMachineId == joinId);
+      _db.EngineerMachine.Remove(entry);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
