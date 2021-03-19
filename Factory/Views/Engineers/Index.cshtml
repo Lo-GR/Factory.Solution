@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models
+@model List<Engineer>;
+
+<h1>List of Employed Engineers</h1>
+@if (@Model.Count == 0)
+{
+  <h3> No Engineers have been added yet. @Html.ActionLink("Click Here", "Create") to add a new one</h3>
+}
+
+@foreach (Engineer element in Model)
+{
+  <li>@Html.ActionLink($"{element.EngineerName}", "Details", new {id = element.EngineerId}) - Status: @element.EngineerStatus</li>
+}
+
+<button class="btn btn-dark">@Html.ActionLink("Add New Engineer", "Create")</button>
