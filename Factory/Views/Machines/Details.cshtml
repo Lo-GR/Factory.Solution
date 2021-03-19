@@ -29,7 +29,8 @@ else
   }
   </ul>
 }
-
+<h3>Options:</h3>
+<button class="btn btn-dark">@Html.ActionLink("Add an Engineer", "AddEngineer", new {id = Model.MachineId})</button>
 <button class="btn btn-dark">@Html.ActionLink("Back to all machines", "Index")</button>
 <button class="btn btn-dark">@Html.ActionLink("Delete this machine", "Delete", new {id = Model.MachineId})</button>
 <button class="btn btn-dark">@Html.ActionLink("Edit this machine details", "Edit", new {id = Model.MachineId})</button>
