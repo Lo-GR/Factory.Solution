@@ -70,5 +70,11 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    public ActionResult AddMachine(int id)
+    {
+      Engineer model = _db.Engineers.FirstOrDefault(engie => engie.EngineerId == id);
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "MachineName");
+      return View(model);
+    }
   }
 }
