@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models;
+@model Engineer;
+
+<h2>Machine Details</h2>
+<p>---</p>
+<h3>Name: @Html.DisplayFor(model => model.EngineerName)</h3>
+<h3>Status: @Html.DisplayFor(model => Model.EngineerStatus)</h3>
+<h3>License Expiration: @Html.DisplayFor(model => model.LicenseExpDate)</h3>
+<h3>Machines Certified In:</h3>
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>No Machines</p>
+}
+else
+{
+  <ul>
+  @foreach (EngineerMachine element in Model.JoinEntities)
+  {
+    <li>@Html.ActionLink($"{element.Machine.MachineName}", "Details", "Machines",new {id = element.MachineId})</li>
+    @using (Html.BeginForm("DeleteMachine", "Engineers"))
+    {
+      @Html.Hidden("joinId", @element.EngineerMachineId)
+      <button class="btn btn-danger" type="submit">Delete</button>
+    }
+  }
+  </ul>
+}
+<h3>Options:</h3>
+<button class="btn btn-dark">@Html.ActionLink("Add machine certification", "AddMachine", new {id = Model.EngineerId})</button>
+<button class="btn btn-dark">@Html.ActionLink("Back to all Engineers", "Index")</button>
+<button class="btn btn-dark">@Html.ActionLink("Delete this engineer", "Delete", new {id = Model.EngineerId})</button>
+<button class="btn btn-dark">@Html.ActionLink("Edit this engineer's details", "Edit", new {id = Model.EngineerId})</button>
