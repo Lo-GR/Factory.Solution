@@ -37,5 +37,10 @@ namespace Factory.Controllers
         .FirstOrDefault(engie => engie.EngineerId == id);
       return View(model);
     }
+    public ActionResult Edit(int id)
+    {
+      Engineer model = _db.Engineers.FirstOrDefault(engie=> engie.EngineerId == id);
+      return View(model);
+    }
   }
 }
