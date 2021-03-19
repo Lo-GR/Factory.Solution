@@ -13,6 +13,11 @@ namespace Factory.Models
     {
       JoinEntities = new HashSet<EngineerMachine>();
     }
-
+  }
+  public enum MachStatus
+  {
+    Operational,
+    Malfunctioning,
+    Repairing
   }
 }

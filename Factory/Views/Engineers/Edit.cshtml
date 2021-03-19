@@ -12,8 +12,8 @@
   @Html.HiddenFor(model => model.EngineerId)
   @Html.LabelFor(model => model.EngineerName)
   @Html.EditorFor(model => model.EngineerName)
-  <p>Engineer Status - idle or working: 
-  @Html.DropDownListFor(model => model.EngineerStatus, new SelectList(Enum.GetValues(typeof(Status)), "Select Status"))</p>
+  <p>Engineer Status: 
+  @Html.DropDownListFor(model => model.EngineerStatus, new SelectList(Enum.GetValues(typeof(EngieStatus)), "Select Status"))</p>
   <p>Enter License Expiration Date: 
   @Html.TextBoxFor(model => model.LicenseExpDate, new {type= "date"})</p>
   <button class="btn btn-success" type="submit">Edit Engineer Details</button>

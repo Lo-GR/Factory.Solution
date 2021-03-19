@@ -12,8 +12,8 @@
   @Html.HiddenFor(model => model.MachineId)
   @Html.LabelFor(model => model.MachineName)
   @Html.EditorFor(model => model.MachineName)
-  <p>Enter Machine Status: operational, malfunctioning, or repair in progress:
-  @Html.EditorFor(model => model.MachineStatus)</p>
+  <p>Enter Machine Status: 
+  @Html.DropDownListFor(model => model.MachineStatus, new SelectList(Enum.GetValues(typeof(MachStatus)), "Select Status"))</p>
   <p>Enter Next Inspection Date: 
   @Html.TextBoxFor(model => model.InspectionDate, new {type= "date"})</p>
   <button class="btn btn-success" type="submit">Edit Machine Details</button>
