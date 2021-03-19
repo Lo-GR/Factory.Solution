@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models
+@model Machine;
+
+<h4>Add new Machine</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.MachineName)
+  @Html.TextBoxFor(model => model.MachineName)
+  @Html.Display("Enter Machine Status: operational, malfunctioning, or repair in progress")
+  @Html.TextBoxFor(model => model.MachineStatus)
+  @Html.Display("Enter Next Inspection Date")
+  @Html.TextBoxFor(model => model.InspectionDate)
+  <button class="btn btn-success" type="submit">Create new customer</button>
+}
+
+<button class="btn btn-dark">@Html.ActionLink("Return to all machines", "Index")</button>
