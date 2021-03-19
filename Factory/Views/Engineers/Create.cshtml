@@ -11,7 +11,7 @@
   @Html.LabelFor(model => model.EngineerName)
   @Html.TextBoxFor(model => model.EngineerName)
   <p>Engineer Status - idle or working: 
-  @Html.TextBoxFor(model => model.EngineerStatus) </p>
+  @Html.DropDownListFor(model => model.EngineerStatus, new SelectList("Idle", "Working")) </p>
   <p>Enter License Expiration Date: 
   @Html.TextBoxFor(model => model.LicenseExpDate, new {type= "date"})</p>
   <button class="btn btn-success" type="submit">Create new engineer entry</button>
