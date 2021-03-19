@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Factory.Models
 {
-  public Machine{
+  public class Machine{
     public int MachineId {get; set;}
     public string MachineName {get; set;}
     public string MachineStatus {get; set;}
