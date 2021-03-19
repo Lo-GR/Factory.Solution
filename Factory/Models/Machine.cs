@@ -2,7 +2,8 @@ using System.Collections.Generic;
 
 namespace Factory.Models
 {
-  public class Machine{
+  public class Machine
+  {
     public int MachineId {get; set;}
     public string MachineName {get; set;}
     public string MachineStatus {get; set;}
@@ -10,7 +11,7 @@ namespace Factory.Models
     public virtual ICollection<EngineerMachine> JoinEntities {get;}
     public Machine()
     {
-      JoinEntiteis = new HashSet<EngineerMachine>();
+      JoinEntities = new HashSet<EngineerMachine>();
     }
 
   }
