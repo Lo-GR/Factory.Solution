@@ -54,5 +54,14 @@ namespace Factory.Controllers
       Machine model = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
       return View(model);
     }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Machine remove = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      _db.Machines.Remove(remove);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
