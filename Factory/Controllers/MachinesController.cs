@@ -37,5 +37,10 @@ namespace Factory.Controllers
         .FirstOrDefault(machine => machine.MachineId == id);
       return View(model);
     }
+    public ActionResult Edit(int id)
+    {
+      Machine model = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      return View(model);
+    }
   }
 }
