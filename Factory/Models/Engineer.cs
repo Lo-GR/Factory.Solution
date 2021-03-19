@@ -14,4 +14,9 @@ namespace Factory.Models
       JoinEntities = new HashSet<EngineerMachine>();
     }
   }
+  public enum Status
+  {
+    Idle,
+    Working
+  }
 }
