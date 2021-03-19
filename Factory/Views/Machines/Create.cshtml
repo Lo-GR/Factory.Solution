@@ -10,10 +10,10 @@
 {
   @Html.LabelFor(model => model.MachineName)
   @Html.TextBoxFor(model => model.MachineName)
-  @Html.Display("Enter Machine Status: operational, malfunctioning, or repair in progress")
-  @Html.TextBoxFor(model => model.MachineStatus)
-  @Html.Display("Enter Next Inspection Date")
-  @Html.TextBoxFor(model => model.InspectionDate, new {type= "date"})
+  <p>Enter Machine Status: operational, malfunctioning, or repair in progress: 
+  @Html.TextBoxFor(model => model.MachineStatus) </p>
+  <p>Enter Next Inspection Date: 
+  @Html.TextBoxFor(model => model.InspectionDate, new {type= "date"})</p>
   <button class="btn btn-success" type="submit">Create new customer</button>
 }
 
