@@ -53,7 +53,7 @@ This is a practice project for practicing C#, Razor, ASP .NET framework, Entity 
 ### _Installation: Database Recreation_
 
 1. Ensure you are running MySQL Server 8 and MySQL WorkBench 8. If you are running windows, use the [Windows Installer ](https://dev.mysql.com/downloads/installer/) for MySQL and follow the instructions provided by the installer. For Macs, visit [MySQL Commuinity Downloads](https://dev.mysql.com/downloads/mysql/) and select macOS from the Operation Systems. This will be a manual installation. If you need additional assistance on this, please visit Epicodus's [Learn How to Program Article](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql).
-2. Once you verify you have SQL installed, create a file called "appsettings.json" in the root directory Factory.Solution. Paste the following into this file.
+2. Once you verify you have SQL installed, create a file called "appsettings.json" in the production subdirectory "Factory." Paste the following into this file.
 ```
 {
   "ConnectionStrings": {
@@ -61,7 +61,7 @@ This is a practice project for practicing C#, Razor, ASP .NET framework, Entity 
   }
 }
 ```
-3. In your terminal, run "dotnet ef database update"
+3. In your terminal, in the same directory as above, run "dotnet ef database update"
 ### _Installation: General Use_
 
 1. Back in your terminal in the Factory production directory, type "dotnet run." The terminal will present local host routes for you to navigate to in your browser. An example would be "http://localhost:5000." Enter this into a web browser of choice to use this application. Keep the terminal running as it is being used to control the local server.
